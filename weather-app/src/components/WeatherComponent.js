@@ -38,10 +38,35 @@ const WeatherComponent = () => {
             <div key={index} className="card mb-2">
               <div className="card-body">
                 <h5 className="card-title">Date: {forecast.dt_txt.split(' ')[0]}</h5>
-                <p className="card-text">Min Temperature: {forecast.main.temp_min}°C</p>
-                <p className="card-text">Max Temperature: {forecast.main.temp_max}°C</p>
-                <p className="card-text">Pressure: {forecast.main.pressure} hPa</p>
-                <p className="card-text">Humidity: {forecast.main.humidity}%</p>
+                <div className='table'>
+                  <table className="table">
+                    <tbody>
+                      <tr>
+                        <td className="card-text">Min Temperature:</td>
+                        <td className="card-text">Max Temperature:</td>
+
+                      </tr>
+                      <tr>
+                        <td>{forecast.main.temp_min}°C</td>
+                        <td>{forecast.main.temp_max}°C</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p className="card-text">Pressure: </p>
+                          </td>
+                          <td>{forecast.main.pressure}hPa </td>
+                        </tr>
+                        <tr>
+                         <td> <p className="card-text">Humidity: </p>
+                         </td>
+                          <td>
+                            {forecast.main.humidity}%
+                          </td>
+                          </tr>
+                    </tbody>
+                  </table>
+                </div>
+
               </div>
             </div>
           ))}
